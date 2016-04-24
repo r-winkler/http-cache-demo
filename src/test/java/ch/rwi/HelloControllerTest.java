@@ -35,7 +35,7 @@ public class HelloControllerTest {
     }
 
     @Test
-    public void getHelloShouldReturnAndHeaderCacheControlSet() throws Exception {
+    public void getHelloShouldReturnWithCacheControlSet() throws Exception {
         this.mockMvc.perform(get("/hello")
                 .accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
