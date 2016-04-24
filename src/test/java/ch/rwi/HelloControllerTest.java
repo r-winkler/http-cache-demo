@@ -44,4 +44,11 @@ public class HelloControllerTest {
                 .andExpect(content().string("Hello World!"))
                 .andExpect(header().stringValues("Cache-Control", "max-age=5"));
     }
+
+    @Test
+    public void getForbiddenResource() throws Exception {
+        this.mockMvc.perform(get("/anyResource")
+                .accept(MediaType.TEXT_PLAIN))
+                .andExpect(status().isForbidden());
+    }
 }
